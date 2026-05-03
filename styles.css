@@ -36,7 +36,7 @@ a:hover {
 /* NAVBAR */
 nav {
     background-color: #151d3b;
-    padding: 24px 0;
+    padding: 5px 0;
     border-bottom: 1px solid #1e2749;
     position: sticky;
     top: 0;
@@ -68,6 +68,7 @@ nav {
 .nav-container a {
     text-transform: uppercase;
     font-size: 14px;
+    font-weight: 500;
     letter-spacing: 1px;
     color: #fff;
 }
@@ -122,12 +123,13 @@ nav {
 .info-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 48px 24px;
+    padding: 20px 24px;
     display: flex;
     gap: 48px;
     align-items: center;
     background: linear-gradient(135deg, #0a0e27 0%, #151d3b 100%);
     border-bottom: 1px solid #1e2749;
+    min-height: calc(100vh - 81px);
 }
 
 #info-izquierda {
@@ -142,7 +144,7 @@ nav {
 
 .info-foto {
     width: 350px;
-    height: 450px;
+    height: auto;
     border: 2px solid #304079;
     border-radius: 4px;
     object-fit: cover;
@@ -150,17 +152,83 @@ nav {
 
 .info-nombre {
     color: #e0e6f7;
-    font-size: 32px;
+    font-size: 35px;
+}
+
+.puesto-dev {
+    font-size: 25px !important;
+}
+
+#en-formacion {
+    color: #9ca3b8;
+    font-size: 15px;
 }
 
 .info-puesto {
     color: #00d4ff;
-    font-size: 32px;
+    font-size: 25px;
 }
 
 .info-carrera {
     color: #ffffff;
-    font-size: 25px;
+    font-size: 20px;
+}
+
+.info-zonabusqueda {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.info-zonabusqueda-ciudad {
+    font-weight: 700;
+    min-width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.modalidad {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+    border: 1px solid transparent;
+}
+
+.modalidad-remoto {
+    color: #00ff40;
+    background-color: rgba(0, 255, 68, 0.1);
+    border-color: #00ff5e;
+}
+
+.modalidad-hibrida {
+    color: #facc15;
+    background-color: rgba(250, 204, 21, 0.1);
+    border-color: #facc15;
+}
+
+.modalidad-presencial {
+    color: #00d4ff;
+    background-color: rgba(0, 212, 255, 0.1);
+    border-color: #00d4ff;
+}
+
+#bandera-arg {
+    width: 25px;
+    margin-right:10px;
+}
+
+#logo-planeta {
+    width: 25px;
+    height: 25px;
+    fill: #00d4ff;
+    margin-right: 10px;
 }
 
 .info-botones {
@@ -169,7 +237,7 @@ nav {
     margin-top: 32px;
 }
 
-.info-boton-descargarCV {
+.boton-descargarCV {
     background-color: #00d4ff;
     color: #0a0e27;
     border: none;
@@ -182,7 +250,11 @@ nav {
     text-transform: uppercase;
 }
 
-.info-boton-descargarCV:hover {
+.boton-descargarCV a {
+    color: inherit;
+}
+
+.boton-descargarCV:hover {
     background-color: #0099cc;
 }
 
@@ -249,6 +321,13 @@ nav {
   letter-spacing: 1px;
 }
 
+.trabajo-lugar {
+  font-size: 12px;
+  color: #9ca3b8;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
 .trabajo-empresa {
   color: #fff;
   font-weight: 700;
@@ -267,6 +346,7 @@ nav {
 .trabajo-logro-destacado {
   background-color: #151d3b;
   padding: 24px;
+  margin: 10px;
   border-left: 3px solid #00d4ff;
 }
 

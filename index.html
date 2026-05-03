@@ -16,13 +16,16 @@
             <ul>
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#experiencia">Experiencia</a></li>
-                <li><a href="#cursos">Cursos</a></li>
+                <!-- <li><a href="#cursos">Cursos</a></li> -->
                 <li><a href="#proyectos">Proyectos</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
             <div class="nav-botones">
                 <button class="boton-selector-idioma">ES</button>
-                <button class="boton-cambiar-modo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 0C114.6 0 0 114.6 0 256S114.6 512 256 512c68.8 0 131.3-27.2 177.3-71.4 7.3-7 9.4-17.9 5.3-27.1s-13.7-14.9-23.8-14.1c-4.9 .4-9.8 .6-14.8 .6-101.6 0-184-82.4-184-184 0-72.1 41.5-134.6 102.1-164.8 9.1-4.5 14.3-14.3 13.1-24.4S322.6 8.5 312.7 6.3C294.4 2.2 275.4 0 256 0z"/></svg></button>
+                <button class="boton-cambiar-modo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                        <path
+                            d="M256 0C114.6 0 0 114.6 0 256S114.6 512 256 512c68.8 0 131.3-27.2 177.3-71.4 7.3-7 9.4-17.9 5.3-27.1s-13.7-14.9-23.8-14.1c-4.9 .4-9.8 .6-14.8 .6-101.6 0-184-82.4-184-184 0-72.1 41.5-134.6 102.1-164.8 9.1-4.5 14.3-14.3 13.1-24.4S322.6 8.5 312.7 6.3C294.4 2.2 275.4 0 256 0z" />
+                    </svg></button>
             </div>
         </div>
     </nav>
@@ -31,31 +34,46 @@
     <section class="info-container" id="inicio">
         <div id="info-izquierda">
             <h1 class="info-nombre">Federico Iseas</h1>
-            <h2 class="info-puesto">Sysadmin PKI - Dev en formación</h2>
-            <h2 class="info-carrera">Estudiante Lic. en Informática</h2>
+            <h2 class="info-puesto">Sysadmin PKI - Soporte técnico N3</h2>
+            <h2 class="puesto-dev info-puesto">Desarrollador de software <span id="en-formacion">(en formación)</span>
+            </h2>
+            <h3 class="info-carrera">Estudiante Lic. en Informática</h3>
             <p class="info-descripcion">Especialista en infraestructura PKI y soporte N3 con formación en la
                 Licenciatura en Informática. Tras 4 años garantizando la operación y estabilidad de sistemas críticos,
                 me encuentro orientando mi carrera hacia el desarrollo de software.</p>
             <p class="info-busqueda">
             <h2 class="info-busqueda-disponibilidad">Disponibilidad</h2>
-            <p class="info-zonabusqueda">
-                <span class="info-zonabusqueda-ciudad">La Plata</span>
-                <span class="modalidad-presencial">Presencial</span>
-                <span class="modalidad-hibrida">Híbrido</span>
-                <span class="modalidad-remoto">Remoto</span>
-            </p>
-            <p class="info-zonabusqueda">
-                <span class="info-zonabusqueda-ciudad">CABA</span>
-                <span class="modalidad-hibrida">Híbrido</span>
-                <span class="modalidad-remoto">Remoto</span>
-            </p>
-            <p class="info-zonabusqueda">
-                <span class="info-zonabusqueda-ciudad">Todo el mundo</span>
-                <span class="modalidad-remoto">Remoto</span>
-            </p>
+            <div class="info-zonabusqueda">
+                <span class="info-zonabusqueda-ciudad"><img id="bandera-arg" src="resources/img/arg-bandera.svg">La
+                    Plata</span>
+                <div class="modalidades-grupo">
+                    <span class="modalidad modalidad-remoto">Remoto</span>
+                    <span class="modalidad modalidad-hibrida">Híbrido</span>
+                    <span class="modalidad modalidad-presencial">Presencial</span>
+                </div>
+            </div>
+            <div class="info-zonabusqueda">
+                <span class="info-zonabusqueda-ciudad"><img id="bandera-arg"
+                        src="resources/img/arg-bandera.svg">CABA</span>
+                <div class="modalidades-grupo">
+                    <span class="modalidad modalidad-remoto">Remoto</span>
+                    <span class="modalidad modalidad-hibrida">Híbrido</span>
+                </div>
+            </div>
+            <div class="info-zonabusqueda">
+                <span class="info-zonabusqueda-ciudad"><svg id="logo-planeta" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512">
+                        <path
+                            d="M55.7 199.7l30.9 30.9c6 6 14.1 9.4 22.6 9.4l21.5 0c8.5 0 16.6 3.4 22.6 9.4l29.3 29.3c6 6 9.4 14.1 9.4 22.6l0 37.5c0 8.5 3.4 16.6 9.4 22.6l13.3 13.3c6 6 9.4 14.1 9.4 22.6l0 18.7c0 17.7 14.3 32 32 32s32-14.3 32-32l0-2.7c0-8.5 3.4-16.6 9.4-22.6l45.3-45.3c6-6 9.4-14.1 9.4-22.6l0-34.7c0-17.7-14.3-32-32-32l-82.7 0c-8.5 0-16.6-3.4-22.6-9.4l-16-16c-4.2-4.2-6.6-10-6.6-16 0-12.5 10.1-22.6 22.6-22.6l34.7 0c12.5 0 22.6-10.1 22.6-22.6 0-6-2.4-11.8-6.6-16l-19.7-19.7C242 130 240 125.1 240 120s2-10 5.7-13.7l17.3-17.3c5.8-5.8 9.1-13.7 9.1-21.9 0-7.2-2.4-13.7-6.4-18.9-3.2-.1-6.4-.2-9.6-.2-95.4 0-175.7 64.2-200.3 151.7zM464 256c0-34.6-8.4-67.2-23.4-95.8-6.4 .9-12.7 3.9-17.9 9.1l-13.4 13.4c-6 6-9.4 14.1-9.4 22.6l0 34.7c0 17.7 14.3 32 32 32l24.1 0c2.5 0 5-.3 7.3-.8 .4-5 .5-10.1 .5-15.2zM0 256a256 256 0 1 1 512 0 256 256 0 1 1 -512 0z" />
+                    </svg>Todo el mundo</span>
+                <div class="modalidades-grupo">
+                    <span class="modalidad modalidad-remoto">Remoto</span>
+                </div>
+            </div>
             </p>
             <div class="info-botones">
-                <button class="info-boton-descargarCV">Descargar CV</button>
+                <button class="boton-descargarCV"><a class="descargar-cv" href="resources/docs/CV_Iseas_Federico.pdf"
+                        target="_blank">Descargar CV</a></button>
                 <div class="info-redes-sociales">
                     <a href="https://www.linkedin.com/in/federico-iseas" target="_blank"><svg
                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
@@ -89,88 +107,103 @@
             <article class="trabajo">
                 <div class="info-empresa-izq">
                     <p class="trabajo-año">2025 - PRESENTE</p>
+                    <p class="trabajo-lugar"> CABA, Argentina</p>
                     <p class="trabajo-empresa">Secretaría de Innovación, Ciencia y Tecnología de la Nación</p>
                 </div>
                 <div class="info-empresa-der">
                     <h3 class="trabajo-puesto">Coordinador de Firma Digital</h3>
                     <p class="trabajo-descripcion">
-                        Coordinación de proyectos relacionados con la firma digital, incluyendo la implementación de
-                        soluciones de firma electrónica y la gestión de certificados digitales. Colaboración con equipos
-                        multidisciplinarios para garantizar la seguridad y eficiencia en los procesos de firma digital.
+                    <ul>
+                        <li>Liderazgo técnico y operativo de un equipo de +15 personas.</li>
+                        <li>Elaboración de reportes de gestión técnica y respuestas para auditorías internas y externas.
+                        </li>
+                        <li>Referente técnico principal para la operación, soporte avanzado N3 y continuidad del
+                            servicio de
+                            la infraestructura de clave pública.</li>
+                    </ul>
                     </p>
                     <div class="trabajo-logro-destacado">
                         <p><strong>Migración de HSM</strong></p>
-                        <ul>
-                            <li>Implementación de nuevo sistema de gestión de certificados digitales.</li>
-                            <li>Coordinación con proveedores para la adquisición y configuración del nuevo HSM.</li>
-                        </ul>
+                        <p>
+                            Líder de proyecto. Encargado del seguimiento, coordinación del equipo técnico, realización
+                            de tareas claves del proceso y de puesta en funcionamiento en la Autoridad Certificante
+                        </p>
                     </div>
                 </div>
             </article>
             <!-- Soporte tecnico-->
             <article class="trabajo">
                 <div class="info-empresa-izq">
-                    <p class="trabajo-año">2025 - PRESENTE</p>
+                    <p class="trabajo-año">2022 - 2025</p>
+                    <p class="trabajo-lugar"> CABA, Argentina</p>
                     <p class="trabajo-empresa">Secretaría de Innovación, Ciencia y Tecnología de la Nación</p>
                 </div>
                 <div class="info-empresa-der">
-                    <h3 class="trabajo-puesto">Coordinador de Firma Digital</h3>
+                    <h3 class="trabajo-puesto">Asesor, Soporte técnico y Administrador de Autoridad Certificante</h3>
                     <p class="trabajo-descripcion">
-                        Coordinación de proyectos relacionados con la firma digital, incluyendo la implementación de
-                        soluciones de firma electrónica y la gestión de certificados digitales. Colaboración con equipos
-                        multidisciplinarios para garantizar la seguridad y eficiencia en los procesos de firma digital.
+                    <ul>
+                        <li>Administración, soporte y mantenimiento de la AC ONTI.</li>
+                        <li>Mantenimiento de infraestructura en Windows Server y operación directa de Hardware Security
+                            Modules (HSM) para operaciones criptográficas.</li>
+                        <li>Diseño y ejecución de consultas complejas en SQL Server para la extracción de datos,
+                            automatizando la generación de reportes operativos.</li>
+                        <li>Soporte avanzado N3 y resolución de +1000 incidentes anuales.</li>
+                    </ul>
                     </p>
                     <div class="trabajo-logro-destacado">
-                        <p><strong>Migración de HSM</strong></p>
-                        <ul>
-                            <li>Implementación de nuevo sistema de gestión de certificados digitales.</li>
-                            <li>Coordinación con proveedores para la adquisición y configuración del nuevo HSM.</li>
-                        </ul>
+                        <p><strong>Elaboración de TSL argentina</strong></p>
+                        <p>
+                            Definición y mantenimiento de la TSL nacional bajo estándares internacionales (ETSI).
+                            Referente técnico y asesor para otros países de la región en la implementación de sus
+                            propias listas de confianza.
+                        </p>
+                    </div>
+                    <div class="trabajo-logro-destacado">
+                        <p><strong>Validador de firmas digitales</strong></p>
+                        <p>
+                            Primer contacto con proveedor, encargado de elaboración de requerimientos y realización de
+                            pruebas funcionales.
+                            Disponible en
+                            <a href="https://validadordefirmas.gob.ar/"
+                                target="_blank">https://validadordefirmas.gob.ar/</a>
+                        </p>
                     </div>
                 </div>
             </article>
             <!-- Oficial de registro-->
             <article class="trabajo">
                 <div class="info-empresa-izq">
-                    <p class="trabajo-año">2025 - PRESENTE</p>
+                    <p class="trabajo-año">2021 - 2022</p>
+                    <p class="trabajo-lugar">CABA, Argentina</p>
                     <p class="trabajo-empresa">Secretaría de Innovación, Ciencia y Tecnología de la Nación</p>
                 </div>
                 <div class="info-empresa-der">
-                    <h3 class="trabajo-puesto">Coordinador de Firma Digital</h3>
+                    <h3 class="trabajo-puesto">Oficial de registro y Asistente técnico</h3>
                     <p class="trabajo-descripcion">
-                        Coordinación de proyectos relacionados con la firma digital, incluyendo la implementación de
-                        soluciones de firma electrónica y la gestión de certificados digitales. Colaboración con equipos
-                        multidisciplinarios para garantizar la seguridad y eficiencia en los procesos de firma digital.
+                    <ul>
+                        <li>Atención al público y primer contacto con las infraestructuras de clave pública (PKI)</li>
+                        <li>Gestión de solicitudes de certificados digitales.</li>
+                        <li>Soporte técnico N1 y resolución de +200 incidentes anuales.</li>
+                    </ul>
                     </p>
-                    <div class="trabajo-logro-destacado">
-                        <p><strong>Migración de HSM</strong></p>
-                        <ul>
-                            <li>Implementación de nuevo sistema de gestión de certificados digitales.</li>
-                            <li>Coordinación con proveedores para la adquisición y configuración del nuevo HSM.</li>
-                        </ul>
-                    </div>
                 </div>
             </article>
             <!-- Experiencias de atención al público-->
             <article class="trabajo">
                 <div class="info-empresa-izq">
-                    <p class="trabajo-año">2025 - PRESENTE</p>
+                    <p class="trabajo-año">2016 - 2021</p>
+                    <p class="trabajo-lugar">Chascomús/La Plata, Bs. As., Argentina</p>
                     <p class="trabajo-empresa">Secretaría de Innovación, Ciencia y Tecnología de la Nación</p>
                 </div>
                 <div class="info-empresa-der">
-                    <h3 class="trabajo-puesto">Coordinador de Firma Digital</h3>
+                    <h3 class="trabajo-puesto">Experiencias varias de atención al público</h3>
                     <p class="trabajo-descripcion">
-                        Coordinación de proyectos relacionados con la firma digital, incluyendo la implementación de
-                        soluciones de firma electrónica y la gestión de certificados digitales. Colaboración con equipos
-                        multidisciplinarios para garantizar la seguridad y eficiencia en los procesos de firma digital.
+                    <ul>
+                        <li>Atención al público</li>
+                        <li>Gestión de pedidos y manejo de caja</li>
+                        <li>Fortalecimiento de habilidades de comunicación, organización y trabajo en equipo.</li>
+                    </ul>
                     </p>
-                    <div class="trabajo-logro-destacado">
-                        <p><strong>Migración de HSM</strong></p>
-                        <ul>
-                            <li>Implementación de nuevo sistema de gestión de certificados digitales.</li>
-                            <li>Coordinación con proveedores para la adquisición y configuración del nuevo HSM.</li>
-                        </ul>
-                    </div>
                 </div>
             </article>
         </section>
@@ -245,8 +278,8 @@
                 <label for="email" class="contacto-label">Tu email:</label>
                 <input type="email" placeholder="email@ejemplo.com" class="contacto-input" required>
                 <label for="textarea" class="contacto-label"">Tu mensaje:</label>
-                <textarea placeholder="Escribe tu mensaje aquí..." class="contacto-textarea" required></textarea>
-                <button class="contacto-boton">Enviar mensaje</button>
+                <textarea placeholder=" Escribe tu mensaje aquí..." class="contacto-textarea" required></textarea>
+                    <button class="contacto-boton">Enviar mensaje</button>
             </div>
         </div>
     </section>
