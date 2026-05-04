@@ -42,8 +42,9 @@
                 Licenciatura en Informática. Tras 4 años garantizando la operación y estabilidad de sistemas críticos,
                 me encuentro orientando mi carrera hacia el desarrollo de software.</p>
             <p class="info-busqueda">
+
             <h2 class="info-busqueda-disponibilidad">Disponibilidad</h2>
-            <div class="info-zonabusqueda">
+            <div class="grid-disponibilidad">
                 <span class="info-zonabusqueda-ciudad"><img id="bandera-arg" src="resources/img/arg-bandera.svg">La
                     Plata</span>
                 <div class="modalidades-grupo">
@@ -51,16 +52,12 @@
                     <span class="modalidad modalidad-hibrida">Híbrido</span>
                     <span class="modalidad modalidad-presencial">Presencial</span>
                 </div>
-            </div>
-            <div class="info-zonabusqueda">
                 <span class="info-zonabusqueda-ciudad"><img id="bandera-arg"
                         src="resources/img/arg-bandera.svg">CABA</span>
                 <div class="modalidades-grupo">
                     <span class="modalidad modalidad-remoto">Remoto</span>
                     <span class="modalidad modalidad-hibrida">Híbrido</span>
                 </div>
-            </div>
-            <div class="info-zonabusqueda">
                 <span class="info-zonabusqueda-ciudad"><svg id="logo-planeta" xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 512 512">
                         <path
@@ -70,6 +67,7 @@
                     <span class="modalidad modalidad-remoto">Remoto</span>
                 </div>
             </div>
+
             </p>
             <div class="info-botones">
                 <button class="boton-descargarCV"><a class="descargar-cv" href="resources/docs/CV_Iseas_Federico.pdf"
@@ -211,44 +209,68 @@
     </section>
     <!-- Proyectos personales-->
     <section class="proyectos-container" id="proyectos">
-        <h2 class="proyectos-titulo">REPOSITORIO DE PROYECTOS</h2>
+        <h2 class="proyectos-titulo">PROYECTOS PERSONALES</h2>
         <div class="proyectos-grid">
             <article class="proyecto-card">
-                <h3 class="proyecto-titulo">Proyecto 1</h3>
+                <h3 class="proyecto-titulo">Generador de CUITS para test</h3>
+                <img src="resources/img/preview-CuitGenerator.png"
+                    alt="Captura de pantalla del generador de CUITs, mostrando una interfaz simple con un botón para generar un nuevo CUIT y un campo de texto que muestra el resultado."
+                    class="proyecto-imagen">
                 <p class="proyecto-descripcion">
-                    Desarrollo de un sistema de scraping y procesamiento de documentos utilizando Puppeteer para la
-                    navegación y Go para la lógica de backend concurrente, orquestado con Docker.
+                    Aplicación web diseñada para la generación de Códigos Únicos de Identificación Tributaria
+                    (CUIT/CUIL) sintácticamente válidos. <br>
+                    El proyecto fue desarrollado como solución a una necesidad
+                    operativa recurrente, con el objetivo de agilizar y automatizar la creación de datos de prueba
+                    confiables
                 </p>
                 <div class="proyecto-tags">
-                    <span class="tag">PUPPETEER</span>
-                    <span class="tag">GO</span>
-                    <span class="tag">DOCKER</span>
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">IA</span>
+                    <span class="tag">GitHub</span>
                 </div>
+                <button class="boton-proyecto"><a class="enlace-proyecto"
+                        href="https://federicoiseas.github.io/CUITGenerator/" target="_blank">Ver proyecto</a></button>
             </article>
 
             <article class="proyecto-card">
-                <h3 class="proyecto-titulo">Proyecto 2</h3>
+                <h3 class="proyecto-titulo">Bot facturador</h3>
+                <img src="resources/img/preview-BotFacturador.png"
+                    alt="Captura de pantalla del bot facturador, mostrando una interfaz de telegram con opciones para ingresar datos de facturación y un botón para generar la factura."
+                    class="proyecto-imagen">
                 <p class="proyecto-descripcion">
-                    Desarrollo de un sistema de scraping y procesamiento de documentos utilizando Puppeteer para la
-                    navegación y Go para la lógica de backend concurrente, orquestado con Docker.
+                    Bot de Telegram para emisión de facturas electrónicas C en Argentina, integrado con los web services
+                    de AFIP/ARCA. <br>
+                    Permite facturar a clientes frecuentes o consumidor final, genera el PDF oficial del
+                    comprobante y lo envía directamente al chat. Incluye gestión de clientes, configuración del punto de
+                    venta y log de operaciones.
                 </p>
                 <div class="proyecto-tags">
-                    <span class="tag">PUPPETEER</span>
-                    <span class="tag">GO</span>
-                    <span class="tag">DOCKER</span>
+                    <span class="tag">Node.js</span>
+                    <span class="tag">MongoDB</span>
+                    <span class="tag">AfipSDK(API)</span>
+                    <span class="tag">IA</span>
+                    <span class="tag">Telegram Bot API</span>
+                    <span class="tag">GitHub</span>
                 </div>
+                <button class="boton-proyecto"><a class="enlace-proyecto"
+                        href="https://github.com/FedericoIseas/FacturadorFIDEV-Prod" target="_blank">Ver proyecto</a></button>
             </article>
 
-            <article class="proyecto-card">
+            <article class="proyecto-card en-desarrollo">
                 <h3 class="proyecto-titulo">Proyecto 3</h3>
+                <img src="resources/img/preview-default.png" alt="Captura de pantalla por defecto para proyectos sin imagen"
+                    class="proyecto-imagen">
                 <p class="proyecto-descripcion">
-                    Desarrollo de un sistema de scraping y procesamiento de documentos utilizando Puppeteer para la
-                    navegación y Go para la lógica de backend concurrente, orquestado con Docker.
+                    Descripción breve del proyecto 3. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Quibusdam, perspiciatis fuga vel possimus pariatur nemo repudiandae similique eum odio accusantium
+                    tempore ducimus porro quisquam incidunt consectetur atque non sed fugit.
                 </p>
                 <div class="proyecto-tags">
-                    <span class="tag">PUPPETEER</span>
-                    <span class="tag">GO</span>
-                    <span class="tag">DOCKER</span>
+                    <span class="tag">Tecnologia 1</span>
+                    <span class="tag">Tecnologia 2</span>
+                    <span class="tag">Tecnologia 3</span>
                 </div>
             </article>
         </div>
