@@ -1,317 +1,325 @@
 <!DOCTYPE html>
-<html lang="es">
+<html class="dark" lang="es">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Federico Iseas - Portfolio Profesional</title>
+    <title>Federico Iseas - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <!-- Navbar -->
-    <nav>
-        <div class="nav-container">
-            <div class="nav-logo">fiseas.dev</div>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#experiencia">Experiencia</a></li>
-                <!-- <li><a href="#cursos">Cursos</a></li> -->
-                <li><a href="#proyectos">Proyectos</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-            <div class="nav-botones">
-                <button class="boton-selector-idioma">ES</button>
-                <button class="boton-cambiar-modo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                        <path
-                            d="M256 0C114.6 0 0 114.6 0 256S114.6 512 256 512c68.8 0 131.3-27.2 177.3-71.4 7.3-7 9.4-17.9 5.3-27.1s-13.7-14.9-23.8-14.1c-4.9 .4-9.8 .6-14.8 .6-101.6 0-184-82.4-184-184 0-72.1 41.5-134.6 102.1-164.8 9.1-4.5 14.3-14.3 13.1-24.4S322.6 8.5 312.7 6.3C294.4 2.2 275.4 0 256 0z" />
-                    </svg></button>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Información personal -->
-    <section class="info-container" id="inicio">
-        <div id="info-izquierda">
-            <h1 class="info-nombre">Federico Iseas</h1>
-            <h2 class="info-puesto">Sysadmin PKI - Soporte técnico N3</h2>
-            <h2 class="puesto-dev info-puesto">Desarrollador de software <span id="en-formacion">(en formación)</span>
-            </h2>
-            <h3 class="info-carrera">Estudiante Lic. en Informática</h3>
-            <p class="info-descripcion">Especialista en infraestructura PKI y soporte N3 con formación en la
-                Licenciatura en Informática. Tras 4 años garantizando la operación y estabilidad de sistemas críticos,
-                me encuentro orientando mi carrera hacia el desarrollo de software.</p>
-            <p class="info-busqueda">
-
-            <h2 class="info-busqueda-disponibilidad">Disponibilidad</h2>
-            <div class="grid-disponibilidad">
-                <span class="info-zonabusqueda-ciudad"><img id="bandera-arg" src="resources/img/arg-bandera.svg">La
-                    Plata</span>
-                <div class="modalidades-grupo">
-                    <span class="modalidad modalidad-remoto">Remoto</span>
-                    <span class="modalidad modalidad-hibrida">Híbrido</span>
-                    <span class="modalidad modalidad-presencial">Presencial</span>
+    <!-- TopNavBar -->
+    <header class="header-fixed">
+        <div class="nav-glass-panel">
+            <div class="nav-content">
+                <div class="nav-logo">
+                    <img alt="FI Logo" src="data:image/png;base64,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" class="nav-logo-img">
                 </div>
-                <span class="info-zonabusqueda-ciudad"><img id="bandera-arg"
-                        src="resources/img/arg-bandera.svg">CABA</span>
-                <div class="modalidades-grupo">
-                    <span class="modalidad modalidad-remoto">Remoto</span>
-                    <span class="modalidad modalidad-hibrida">Híbrido</span>
-                </div>
-                <span class="info-zonabusqueda-ciudad"><svg id="logo-planeta" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 512 512">
-                        <path
-                            d="M55.7 199.7l30.9 30.9c6 6 14.1 9.4 22.6 9.4l21.5 0c8.5 0 16.6 3.4 22.6 9.4l29.3 29.3c6 6 9.4 14.1 9.4 22.6l0 37.5c0 8.5 3.4 16.6 9.4 22.6l13.3 13.3c6 6 9.4 14.1 9.4 22.6l0 18.7c0 17.7 14.3 32 32 32s32-14.3 32-32l0-2.7c0-8.5 3.4-16.6 9.4-22.6l45.3-45.3c6-6 9.4-14.1 9.4-22.6l0-34.7c0-17.7-14.3-32-32-32l-82.7 0c-8.5 0-16.6-3.4-22.6-9.4l-16-16c-4.2-4.2-6.6-10-6.6-16 0-12.5 10.1-22.6 22.6-22.6l34.7 0c12.5 0 22.6-10.1 22.6-22.6 0-6-2.4-11.8-6.6-16l-19.7-19.7C242 130 240 125.1 240 120s2-10 5.7-13.7l17.3-17.3c5.8-5.8 9.1-13.7 9.1-21.9 0-7.2-2.4-13.7-6.4-18.9-3.2-.1-6.4-.2-9.6-.2-95.4 0-175.7 64.2-200.3 151.7zM464 256c0-34.6-8.4-67.2-23.4-95.8-6.4 .9-12.7 3.9-17.9 9.1l-13.4 13.4c-6 6-9.4 14.1-9.4 22.6l0 34.7c0 17.7 14.3 32 32 32l24.1 0c2.5 0 5-.3 7.3-.8 .4-5 .5-10.1 .5-15.2zM0 256a256 256 0 1 1 512 0 256 256 0 1 1 -512 0z" />
-                    </svg>Todo el mundo</span>
-                <div class="modalidades-grupo">
-                    <span class="modalidad modalidad-remoto">Remoto</span>
-                </div>
-            </div>
-
-            </p>
-            <div class="info-botones">
-                <button class="boton-descargarCV"><a class="descargar-cv" href="resources/docs/CV_Iseas_Federico.pdf"
-                        target="_blank">Descargar CV</a></button>
-                <div class="info-redes-sociales">
-                    <a href="https://www.linkedin.com/in/federico-iseas" target="_blank"><svg
-                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                            <path
-                                d="M100.3 448l-92.9 0 0-299.1 92.9 0 0 299.1zM53.8 108.1C24.1 108.1 0 83.5 0 53.8 0 39.5 5.7 25.9 15.8 15.8s23.8-15.8 38-15.8 27.9 5.7 38 15.8 15.8 23.8 15.8 38c0 29.7-24.1 54.3-53.8 54.3zM447.9 448l-92.7 0 0-145.6c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7l0 148.1-92.8 0 0-299.1 89.1 0 0 40.8 1.3 0c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3l0 164.3-.1 0z" />
-                        </svg></a>
-                    <a href="https://github.com/federicoiseas" target="_blank"><svg xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 512 512"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
-                            <path
-                                d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM252.8 8c-138.7 0-244.8 105.3-244.8 244 0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1 100-33.2 167.8-128.1 167.8-239 0-138.7-112.5-244-251.2-244zM105.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
-                        </svg></a>
-                    <a href="mailto:federicoiseas@gmail.com" target="_blank"><svg xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 512 512"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
-                            <path
-                                d="M61.4 64C27.5 64 0 91.5 0 125.4 0 126.3 0 127.1 .1 128L0 128 0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256-.1 0c0-.9 .1-1.7 .1-2.6 0-33.9-27.5-61.4-61.4-61.4L61.4 64zM464 192.3L464 384c0 8.8-7.2 16-16 16L64 400c-8.8 0-16-7.2-16-16l0-191.7 154.8 117.4c31.4 23.9 74.9 23.9 106.4 0L464 192.3zM48 125.4C48 118 54 112 61.4 112l389.2 0c7.4 0 13.4 6 13.4 13.4 0 4.2-2 8.2-5.3 10.7L280.2 271.5c-14.3 10.8-34.1 10.8-48.4 0L53.3 136.1c-3.3-2.5-5.3-6.5-5.3-10.7z" />
-                        </svg></a>
+                <nav class="nav-menu">
+                    <a href="#inicio">Inicio</a>
+                    <a href="#experiencia">Experiencia</a>
+                    <a href="#proyectos">Proyectos</a>
+                    <a href="#contacto">Contacto</a>
+                </nav>
+                <div class="nav-actions">
+                    <span class="material-symbols-outlined nav-icon">language</span>
+                    <span class="material-symbols-outlined nav-icon">dark_mode</span>
+                    <a href="resources/docs/CV_Iseas_Federico.pdf" class="nav-cv-btn" target="_blank">
+                        <span class="material-symbols-outlined">download</span>
+                        CV
+                    </a>
                 </div>
             </div>
         </div>
-        <div id="info-derecha">
-            <img src="resources/img/foto.jpg"
-                alt="Retrato de Federico Iseas sonriendo, con camisa a cuadros y fondo azul." class="info-foto">
-        </div>
-    </section>
+    </header>
 
-    <!-- Experiencia profesional -->
-    <section class="experiencia-container" id="experiencia">
-        <section class="exp-container" id="experiencia">
-            <h2 class="exp-titulo"> EXPERIENCIA PROFESIONAL</h2>
-            <!-- Coordinador de Firma Digital-->
-            <article class="trabajo">
-                <div class="info-empresa-izq">
-                    <p class="trabajo-año">2025 - PRESENTE</p>
-                    <p class="trabajo-lugar"> CABA, Argentina</p>
-                    <p class="trabajo-empresa">Secretaría de Innovación, Ciencia y Tecnología de la Nación</p>
-                </div>
-                <div class="info-empresa-der">
-                    <h3 class="trabajo-puesto">Coordinador de Firma Digital</h3>
-                    <p class="trabajo-descripcion">
-                    <ul>
-                        <li>Liderazgo técnico y operativo de un equipo de +15 personas.</li>
-                        <li>Elaboración de reportes de gestión técnica y respuestas para auditorías internas y externas.
-                        </li>
-                        <li>Referente técnico principal para la operación, soporte avanzado N3 y continuidad del
-                            servicio de
-                            la infraestructura de clave pública.</li>
-                    </ul>
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section" id="inicio">
+            <div class="hero-grid">
+                <div class="hero-text">
+                    <div>
+                        <h1 class="hero-title">Federico Iseas</h1>
+                        <h2 class="hero-subtitle">Sysadmin PKI - Soporte técnico N3</h2>
+                        <h3 class="hero-subtitle-dev">Desarrollador de software <span class="hero-subtitle-dev-small">(en formación)</span></h3>
+                    </div>
+                    <p class="hero-description">
+                        <strong>Estudiante Lic. en Informática</strong><br>
+                        Especialista en infraestructura PKI y soporte N3 con formación en la Licenciatura en Informática. Tras 4 años garantizando la operación y estabilidad de sistemas críticos, me encuentro orientando mi carrera hacia el desarrollo de software.
                     </p>
-                    <div class="trabajo-logro-destacado">
-                        <p><strong>Migración de HSM</strong></p>
-                        <p>
-                            Líder de proyecto. Encargado del seguimiento, coordinación del equipo técnico, realización
-                            de tareas claves del proceso y de puesta en funcionamiento en la Autoridad Certificante
-                        </p>
+                    <div class="availability-section">
+                        <h4 class="availability-title">Disponibilidad</h4>
+                        <div class="availability-grid">
+                            <div class="availability-card">
+                                <span class="availability-location">
+                                    <span class="material-symbols-outlined">location_on</span> La Plata
+                                </span>
+                                <div class="availability-modes">
+                                    <span class="mode-badge mode-remote">REMOTO</span>
+                                    <span class="mode-badge mode-hybrid">HÍBRIDO</span>
+                                    <span class="mode-badge mode-presential">PRESENCIAL</span>
+                                </div>
+                            </div>
+                            <div class="availability-card">
+                                <span class="availability-location">
+                                    <span class="material-symbols-outlined">location_city</span> CABA
+                                </span>
+                                <div class="availability-modes">
+                                    <span class="mode-badge mode-remote">REMOTO</span>
+                                    <span class="mode-badge mode-hybrid">HÍBRIDO</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-cta">
+                        <a href="resources/docs/CV_Iseas_Federico.pdf" class="btn-primary" target="_blank">DESCARGAR CV</a>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/federico-iseas" target="_blank" aria-label="LinkedIn">
+                                <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                            </a>
+                            <a href="https://github.com/federicoiseas" target="_blank" aria-label="GitHub">
+                                <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </article>
-            <!-- Soporte tecnico-->
-            <article class="trabajo">
-                <div class="info-empresa-izq">
-                    <p class="trabajo-año">2022 - 2025</p>
-                    <p class="trabajo-lugar"> CABA, Argentina</p>
-                    <p class="trabajo-empresa">Secretaría de Innovación, Ciencia y Tecnología de la Nación</p>
-                </div>
-                <div class="info-empresa-der">
-                    <h3 class="trabajo-puesto">Asesor, Soporte técnico y Administrador de Autoridad Certificante</h3>
-                    <p class="trabajo-descripcion">
-                    <ul>
-                        <li>Administración, soporte y mantenimiento de la AC ONTI.</li>
-                        <li>Mantenimiento de infraestructura en Windows Server y operación directa de Hardware Security
-                            Modules (HSM) para operaciones criptográficas.</li>
-                        <li>Diseño y ejecución de consultas complejas en SQL Server para la extracción de datos,
-                            automatizando la generación de reportes operativos.</li>
-                        <li>Soporte avanzado N3 y resolución de +1000 incidentes anuales.</li>
-                    </ul>
-                    </p>
-                    <div class="trabajo-logro-destacado">
-                        <p><strong>Elaboración de TSL argentina</strong></p>
-                        <p>
-                            Definición y mantenimiento de la TSL nacional bajo estándares internacionales (ETSI).
-                            Referente técnico y asesor para otros países de la región en la implementación de sus
-                            propias listas de confianza.
-                        </p>
-                    </div>
-                    <div class="trabajo-logro-destacado">
-                        <p><strong>Validador de firmas digitales</strong></p>
-                        <p>
-                            Primer contacto con proveedor, encargado de elaboración de requerimientos y realización de
-                            pruebas funcionales.
-                            Disponible en
-                            <a href="https://validadordefirmas.gob.ar/"
-                                target="_blank">https://validadordefirmas.gob.ar/</a>
-                        </p>
+                <div class="hero-image">
+                    <div class="hero-image-wrapper">
+                        <img alt="Federico Iseas" src="https://lh3.googleusercontent.com/aida/ADBb0ugwKwj5CYjBCclzOt89bhqESEoLeDVF1MXBb0OZVKayqrnNnpjG_1YfCOtt3lDgFAS57Vo_AIH4QfNMERMHFOjiuh7GkJ7ndeyKNFwxi4gpEzJcWafWFnJIWFn5US2v6VFdgLp3Mu6ylShAOmWgPnJz8CP3ksbpDPLXGIhKV6SZ8UOu0NJ9o_7ixmVavVtSX2QXFMOsgOGacpi5e4ZEtiWf3KHdh_2u6jegpviwxCL6emaS5pecZOGTnk4" class="hero-image-img">
                     </div>
                 </div>
-            </article>
-            <!-- Oficial de registro-->
-            <article class="trabajo">
-                <div class="info-empresa-izq">
-                    <p class="trabajo-año">2021 - 2022</p>
-                    <p class="trabajo-lugar">CABA, Argentina</p>
-                    <p class="trabajo-empresa">Secretaría de Innovación, Ciencia y Tecnología de la Nación</p>
-                </div>
-                <div class="info-empresa-der">
-                    <h3 class="trabajo-puesto">Oficial de registro y Asistente técnico</h3>
-                    <p class="trabajo-descripcion">
-                    <ul>
-                        <li>Atención al público y primer contacto con las infraestructuras de clave pública (PKI)</li>
-                        <li>Gestión de solicitudes de certificados digitales.</li>
-                        <li>Soporte técnico N1 y resolución de +200 incidentes anuales.</li>
-                    </ul>
-                    </p>
-                </div>
-            </article>
-            <!-- Experiencias de atención al público-->
-            <article class="trabajo">
-                <div class="info-empresa-izq">
-                    <p class="trabajo-año">2016 - 2021</p>
-                    <p class="trabajo-lugar">Chascomús/La Plata, Bs. As., Argentina</p>
-                    <p class="trabajo-empresa">Secretaría de Innovación, Ciencia y Tecnología de la Nación</p>
-                </div>
-                <div class="info-empresa-der">
-                    <h3 class="trabajo-puesto">Experiencias varias de atención al público</h3>
-                    <p class="trabajo-descripcion">
-                    <ul>
-                        <li>Atención al público</li>
-                        <li>Gestión de pedidos y manejo de caja</li>
-                        <li>Fortalecimiento de habilidades de comunicación, organización y trabajo en equipo.</li>
-                    </ul>
-                    </p>
-                </div>
-            </article>
+            </div>
         </section>
 
-    </section>
-    <!-- Proyectos personales-->
-    <section class="proyectos-container" id="proyectos">
-        <h2 class="proyectos-titulo">PROYECTOS PERSONALES</h2>
-        <div class="proyectos-grid">
-            <article class="proyecto-card">
-                <h3 class="proyecto-titulo">Generador de CUITS para test</h3>
-                <img src="resources/img/preview-CuitGenerator.png"
-                    alt="Captura de pantalla del generador de CUITs, mostrando una interfaz simple con un botón para generar un nuevo CUIT y un campo de texto que muestra el resultado."
-                    class="proyecto-imagen">
-                <p class="proyecto-descripcion">
-                    Aplicación web diseñada para la generación de Códigos Únicos de Identificación Tributaria
-                    (CUIT/CUIL) sintácticamente válidos. <br>
-                    El proyecto fue desarrollado como solución a una necesidad
-                    operativa recurrente, con el objetivo de agilizar y automatizar la creación de datos de prueba
-                    confiables
-                </p>
-                <div class="proyecto-tags">
-                    <span class="tag">HTML</span>
-                    <span class="tag">CSS</span>
-                    <span class="tag">JavaScript</span>
-                    <span class="tag">IA</span>
-                    <span class="tag">GitHub</span>
-                </div>
-                <button class="boton-proyecto"><a class="enlace-proyecto"
-                        href="https://federicoiseas.github.io/CUITGenerator/" target="_blank">Ver proyecto</a></button>
-            </article>
+        <!-- Main Content Grid -->
+        <div class="content-grid">
+            <!-- Main Column (Experience + Projects) -->
+            <div class="content-main">
+                <!-- Experiencia Section -->
+                <section class="section-experience" id="experiencia">
+                    <h2 class="section-title">
+                        <span class="material-symbols-outlined">work</span> Experiencia Profesional
+                    </h2>
+                    <div class="experience-list">
+                        <!-- Role 1 -->
+                        <div class="experience-card">
+                            <div class="exp-header">
+                                <div>
+                                    <h3 class="exp-title">Coordinador de Firma Digital</h3>
+                                    <div class="exp-company">Secretaría de Innovación, Ciencia y Tecnología de la Nación</div>
+                                </div>
+                                <div class="exp-meta">
+                                    <div class="exp-year">2025 - PRESENTE</div>
+                                    <div class="exp-location">CABA, ARGENTINA</div>
+                                </div>
+                            </div>
+                            <ul class="exp-description">
+                                <li>Liderazgo técnico y operativo de un equipo de +15 personas.</li>
+                                <li>Elaboración de reportes de gestión técnica y respuestas para auditorías internas y externas.</li>
+                                <li>Referente técnico principal para la operación, soporte avanzado N3 y continuidad del servicio de la infraestructura de clave pública.</li>
+                            </ul>
+                            <div class="exp-highlight">
+                                <h4>Migración de HSM</h4>
+                                <p>Líder de proyecto. Encargado del seguimiento, coordinación del equipo técnico, realización de tareas claves del proceso.</p>
+                            </div>
+                        </div>
+                        <!-- Role 2 -->
+                        <div class="experience-card">
+                            <div class="exp-header">
+                                <div>
+                                    <h3 class="exp-title">Asesor & Administrador AC</h3>
+                                    <div class="exp-company">Secretaría de Innovación, Ciencia y Tecnología de la Nación</div>
+                                </div>
+                                <div class="exp-meta">
+                                    <div class="exp-year">2022 - 2025</div>
+                                    <div class="exp-location">CABA, ARGENTINA</div>
+                                </div>
+                            </div>
+                            <ul class="exp-description">
+                                <li>Mantenimiento de infraestructura en Windows Server y operación de HSM.</li>
+                                <li>Automatización de reportes mediante consultas complejas en SQL Server.</li>
+                                <li>Resolución de +1000 incidentes anuales (Soporte N3).</li>
+                            </ul>
+                            <div class="exp-highlights-grid">
+                                <div class="exp-highlight">
+                                    <h4>TSL argentina</h4>
+                                    <p>Definición y mantenimiento bajo estándares ETSI.</p>
+                                </div>
+                                <div class="exp-highlight">
+                                    <h4>Validador de firmas</h4>
+                                    <p>Elaboración de requerimientos y pruebas funcionales.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
-            <article class="proyecto-card">
-                <h3 class="proyecto-titulo">Bot facturador</h3>
-                <img src="resources/img/preview-BotFacturador.png"
-                    alt="Captura de pantalla del bot facturador, mostrando una interfaz de telegram con opciones para ingresar datos de facturación y un botón para generar la factura."
-                    class="proyecto-imagen">
-                <p class="proyecto-descripcion">
-                    Bot de Telegram para emisión de facturas electrónicas C en Argentina, integrado con los web services
-                    de AFIP/ARCA. <br>
-                    Permite facturar a clientes frecuentes o consumidor final, genera el PDF oficial del
-                    comprobante y lo envía directamente al chat. Incluye gestión de clientes, configuración del punto de
-                    venta y log de operaciones.
-                </p>
-                <div class="proyecto-tags">
-                    <span class="tag">Node.js</span>
-                    <span class="tag">MongoDB</span>
-                    <span class="tag">AfipSDK(API)</span>
-                    <span class="tag">IA</span>
-                    <span class="tag">Telegram Bot API</span>
-                    <span class="tag">GitHub</span>
-                </div>
-                <button class="boton-proyecto"><a class="enlace-proyecto"
-                        href="https://github.com/FedericoIseas/FacturadorFIDEV-Prod" target="_blank">Ver proyecto</a></button>
-            </article>
-
-            <article class="proyecto-card en-desarrollo">
-                <h3 class="proyecto-titulo">Proyecto 3</h3>
-                <img src="resources/img/preview-default.png" alt="Captura de pantalla por defecto para proyectos sin imagen"
-                    class="proyecto-imagen">
-                <p class="proyecto-descripcion">
-                    Descripción breve del proyecto 3. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Quibusdam, perspiciatis fuga vel possimus pariatur nemo repudiandae similique eum odio accusantium
-                    tempore ducimus porro quisquam incidunt consectetur atque non sed fugit.
-                </p>
-                <div class="proyecto-tags">
-                    <span class="tag">Tecnologia 1</span>
-                    <span class="tag">Tecnologia 2</span>
-                    <span class="tag">Tecnologia 3</span>
-                </div>
-            </article>
-        </div>
-    </section>
-
-    <!-- Contacto -->
-    <section class="contacto-container" id="contacto">
-        <h2 class="contacto-titulo">¡Hablemos!</h2>
-        <div class="contacto-info">
-            <p class="contacto-descripcion">
-                Si estás interesado en mi perfil o tienes alguna pregunta, no dudes en contactarme en
-            </p>
-            <div class="contacto-redes-sociales">
-                <a href="https://www.linkedin.com/in/federico-iseas" target="_blank"><svg
-                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                        <path
-                            d="M100.3 448l-92.9 0 0-299.1 92.9 0 0 299.1zM53.8 108.1C24.1 108.1 0 83.5 0 53.8 0 39.5 5.7 25.9 15.8 15.8s23.8-15.8 38-15.8 27.9 5.7 38 15.8 15.8 23.8 15.8 38c0 29.7-24.1 54.3-53.8 54.3zM447.9 448l-92.7 0 0-145.6c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7l0 148.1-92.8 0 0-299.1 89.1 0 0 40.8 1.3 0c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3l0 164.3-.1 0z" />
-                    </svg></a>
-                <a href="mailto:federicoiseas@gmail.com" target="_blank"><svg xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 512 512">
-                        <path
-                            d="M61.4 64C27.5 64 0 91.5 0 125.4 0 126.3 0 127.1 .1 128L0 128 0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256-.1 0c0-.9 .1-1.7 .1-2.6 0-33.9-27.5-61.4-61.4-61.4L61.4 64zM464 192.3L464 384c0 8.8-7.2 16-16 16L64 400c-8.8 0-16-7.2-16-16l0-191.7 154.8 117.4c31.4 23.9 74.9 23.9 106.4 0L464 192.3zM48 125.4C48 118 54 112 61.4 112l389.2 0c7.4 0 13.4 6 13.4 13.4 0 4.2-2 8.2-5.3 10.7L280.2 271.5c-14.3 10.8-34.1 10.8-48.4 0L53.3 136.1c-3.3-2.5-5.3-6.5-5.3-10.7z" />
-                    </svg></a>
+                <!-- Proyectos Section -->
+                <section class="section-projects" id="proyectos">
+                    <h2 class="section-title">
+                        <span class="material-symbols-outlined">rocket_launch</span> Proyectos Destacados
+                    </h2>
+                    <div class="projects-grid">
+                        <!-- Project 1 -->
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img alt="Generador de CUITS" src="https://lh3.googleusercontent.com/aida/ADBb0ug79aZGhgsS2yJQIUComl4MH63Yk7ycsieag4ZG3IwHIRt0IlFDJg8JKwPvla9CmMpS4vUqMhPLjsUjwi2EAldS7p9E3uTBw3hxWGoJbTuiNozlwmyEMK_Jh0pgvPKNy8jsiV8QguowoZGpRxK9viFkKRIKAMb8x7Ocrvfi1E52M81BdarguasTkInf8QqS4GzL_qATgDIFqWWbEjCYDwYn-eSRNUHrUo4baR0XmZhKST8qStlgJYP_G4s">
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">Generador de CUITS</h3>
+                                <p class="project-description">App web para creación de datos de prueba válidos sintácticamente, agilizando procesos operativos.</p>
+                                <div class="project-tags">
+                                    <span class="tag">JS</span>
+                                    <span class="tag">HTML/CSS</span>
+                                </div>
+                                <a href="#" class="btn-outline">VER PROYECTO</a>
+                            </div>
+                        </div>
+                        <!-- Project 2 -->
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img alt="Bot Facturador Telegram" src="https://lh3.googleusercontent.com/aida/ADBb0uhSBllgiS8Oj9l39kZuyzSscxrcuTjXcUh8BIlCnQLMX6JgtDpKtP11cAAcvY3pKsFK6_Lza3-ZaeYJOfKLfe-CUbsN1PKmuFWXJ5f7Fa41ehUKOZmtvnL85IC7P2x55UZiB4g-6v_fE4gnM2646oyGpU64qWlDDCN8HpJNmb-oYcEOimZdhTIVrzrgw0rOwl7IyShPsEOf9WSMVMV-O7Td6vbOEyrePCcq-ochqR-co9pqXNvK4oedj_o">
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">Bot Facturador</h3>
+                                <p class="project-description">Integración con AFIP para emisión de facturas electrónicas vía Telegram con gestión de clientes.</p>
+                                <div class="project-tags">
+                                    <span class="tag">NODE.JS</span>
+                                    <span class="tag">AFIP SDK</span>
+                                </div>
+                                <a href="#" class="btn-outline">VER PROYECTO</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
-            <div class="contacto-formulario">
-                <p class="contacto-descripcion">o dejame tu mensaje:</p>
-                <label for="email" class="contacto-label">Tu email:</label>
-                <input type="email" placeholder="email@ejemplo.com" class="contacto-input" required>
-                <label for="textarea" class="contacto-label"">Tu mensaje:</label>
-                <textarea placeholder=" Escribe tu mensaje aquí..." class="contacto-textarea" required></textarea>
-                    <button class="contacto-boton">Enviar mensaje</button>
-            </div>
+
+            <!-- Sidebar Column -->
+            <aside class="content-sidebar">
+                <!-- Habilidades Section -->
+                <section class="sidebar-section">
+                    <h2 class="section-title-sm">
+                        <span class="material-symbols-outlined">psychology</span> Skills
+                    </h2>
+                    <div class="skills-container">
+                        <div class="skill-group">
+                            <h3 class="skill-category">Infraestructura</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">HSM</span>
+                                <span class="skill-tag">Win Server</span>
+                                <span class="skill-tag">SQL Server</span>
+                                <span class="skill-tag">ETSI</span>
+                            </div>
+                        </div>
+                        <div class="skill-group">
+                            <h3 class="skill-category">Desarrollo</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">JS / Node</span>
+                                <span class="skill-tag">HTML/CSS</span>
+                                <span class="skill-tag">Git</span>
+                                <span class="skill-tag">MongoDB</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Educacion Section -->
+                <section class="sidebar-section">
+                    <h2 class="section-title-sm">
+                        <span class="material-symbols-outlined">school</span> Educación
+                    </h2>
+                    <div class="glass-panel education-panel">
+                        <div class="education-item">
+                            <div class="education-status">EN CURSO</div>
+                            <div class="education-degree">Lic. en Informática</div>
+                            <div class="education-school">UNLP</div>
+                        </div>
+                        <div class="education-certs">
+                            <h3>CERTIFICACIONES</h3>
+                            <div class="cert-list">
+                                <div class="cert-item">
+                                    <span class="material-symbols-outlined">verified</span>
+                                    <span>Certificación Técnica PKI / HSM</span>
+                                </div>
+                                <div class="cert-item">
+                                    <span class="material-symbols-outlined">verified</span>
+                                    <span>Fullstack Node.js</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Idiomas Section -->
+                <section class="sidebar-section">
+                    <h2 class="section-title-sm">
+                        <span class="material-symbols-outlined">translate</span> Idiomas
+                    </h2>
+                    <div class="languages-grid">
+                        <div class="language-card">
+                            <span class="language-name">ESPAÑOL</span>
+                            <span class="language-level">NATIVO</span>
+                        </div>
+                        <div class="language-card">
+                            <span class="language-name">INGLÉS</span>
+                            <span class="language-level">B2 / TÉCNICO</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CTA Sidebar -->
+                <div class="glass-panel cta-panel">
+                    <h3>¿Hablamos?</h3>
+                    <p>Estoy abierto a nuevas oportunidades y colaboraciones.</p>
+                    <a href="#contacto" class="btn-primary">ENVIAR MENSAJE</a>
+                </div>
+            </aside>
         </div>
-    </section>
+
+        <!-- Contacto Section -->
+        <section class="section-contact" id="contacto">
+            <div class="glass-panel contact-panel">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h2 class="contact-title">¡Hablemos!</h2>
+                        <p class="contact-description">Si estás interesado en mi perfil o tienes alguna pregunta, no dudes en contactarme.</p>
+                        <div class="contact-social">
+                            <a href="https://www.linkedin.com/in/federico-iseas" target="_blank" aria-label="LinkedIn">
+                                <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                            </a>
+                            <a href="mailto:federicoiseas@gmail.com" aria-label="Email">
+                                <span class="material-symbols-outlined">mail</span>
+                            </a>
+                        </div>
+                    </div>
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label for="email">Tu email:</label>
+                            <input type="email" id="email" placeholder="email@ejemplo.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="mensaje">Tu mensaje:</label>
+                            <textarea id="mensaje" placeholder="Escribe tu mensaje aquí..." rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">ENVIAR MENSAJE</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
-        <p>&copy; 2026 Federico Iseas. Todos los derechos reservados.</p>
-        <div class="footer-redes">
-            <a href="https://github.com/federicoiseas" target="_blank">GITHUB</a>
-            <a href="https://linkedin.com/in/federico-iseas" target="_blank">LINKEDIN</a>
+        <div class="footer-content">
+            <div class="footer-copyright">© 2026 Federico Iseas. Todos los derechos reservados.</div>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/federico-iseas" target="_blank">LinkedIn</a>
+                <a href="https://github.com/federicoiseas" target="_blank">GitHub</a>
+                <a href="mailto:federicoiseas@gmail.com">Email</a>
+            </div>
         </div>
     </footer>
 </body>
