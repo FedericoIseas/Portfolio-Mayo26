@@ -1,13 +1,31 @@
 <!DOCTYPE html>
-<html class="dark" lang="es">
+<html lang="es">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Federico Iseas - Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script>
+        // Immediate theme check to prevent FOUC
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.documentElement.classList.add('dark');
+        } else if (savedTheme === 'light') {
+            document.documentElement.classList.remove('dark');
+        } else {
+            // Default to light theme since user wants a clear mode
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        emailjs.init({ publicKey: '51V_iiVuxdtqg4bDy' });
+    </script>
 </head>
 
 <body>
@@ -16,7 +34,9 @@
         <div class="nav-glass-panel">
             <div class="nav-content">
                 <div class="nav-logo">
-                    <img alt="FI Logo" src="data:image/png;base64,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" class="nav-logo-img">
+                    <img alt="FI Logo"
+                        src="data:image/png;base64,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"
+                        class="nav-logo-img">
                 </div>
                 <nav class="nav-menu">
                     <a href="#inicio">Inicio</a>
@@ -26,7 +46,7 @@
                 </nav>
                 <div class="nav-actions">
                     <span class="material-symbols-outlined nav-icon">language</span>
-                    <span class="material-symbols-outlined nav-icon">dark_mode</span>
+                    <span id="theme-toggle" class="material-symbols-outlined nav-icon">dark_mode</span>
                     <a href="resources/docs/CV_Iseas_Federico.pdf" class="nav-cv-btn" target="_blank">
                         <span class="material-symbols-outlined">download</span>
                         CV
@@ -44,11 +64,14 @@
                     <div>
                         <h1 class="hero-title">Federico Iseas</h1>
                         <h2 class="hero-subtitle">Sysadmin PKI - Soporte técnico N3</h2>
-                        <h3 class="hero-subtitle-dev">Desarrollador de software <span class="hero-subtitle-dev-small">(en formación)</span></h3>
+                        <h3 class="hero-subtitle-dev">Desarrollador de software <span
+                                class="hero-subtitle-dev-small">(en formación)</span></h3>
                     </div>
                     <p class="hero-description">
                         <strong>Estudiante Lic. en Informática</strong><br>
-                        Especialista en infraestructura PKI y soporte N3 con formación en la Licenciatura en Informática. Tras 4 años garantizando la operación y estabilidad de sistemas críticos, me encuentro orientando mi carrera hacia el desarrollo de software.
+                        Especialista en infraestructura PKI y soporte N3 con formación en la Licenciatura en
+                        Informática. Tras 4 años garantizando la operación y estabilidad de sistemas críticos, me
+                        encuentro orientando mi carrera hacia el desarrollo de software.
                     </p>
                     <div class="availability-section">
                         <h4 class="availability-title">Disponibilidad</h4>
@@ -75,20 +98,27 @@
                         </div>
                     </div>
                     <div class="hero-cta">
-                        <a href="resources/docs/CV_Iseas_Federico.pdf" class="btn-primary" target="_blank">DESCARGAR CV</a>
+                        <a href="resources/docs/CV_Iseas_Federico.pdf" class="btn-primary" target="_blank">DESCARGAR
+                            CV</a>
                         <div class="social-links">
                             <a href="https://www.linkedin.com/in/federico-iseas" target="_blank" aria-label="LinkedIn">
-                                <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                                </svg>
                             </a>
                             <a href="https://github.com/federicoiseas" target="_blank" aria-label="GitHub">
-                                <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                                </svg>
                             </a>
                         </div>
                     </div>
                 </div>
                 <div class="hero-image">
                     <div class="hero-image-wrapper">
-                        <img alt="Federico Iseas" src="https://lh3.googleusercontent.com/aida/ADBb0ugwKwj5CYjBCclzOt89bhqESEoLeDVF1MXBb0OZVKayqrnNnpjG_1YfCOtt3lDgFAS57Vo_AIH4QfNMERMHFOjiuh7GkJ7ndeyKNFwxi4gpEzJcWafWFnJIWFn5US2v6VFdgLp3Mu6ylShAOmWgPnJz8CP3ksbpDPLXGIhKV6SZ8UOu0NJ9o_7ixmVavVtSX2QXFMOsgOGacpi5e4ZEtiWf3KHdh_2u6jegpviwxCL6emaS5pecZOGTnk4" class="hero-image-img">
+                        <img alt="Federico Iseas" src="resources/img/foto.jpg" class="hero-image-img">
                     </div>
                 </div>
             </div>
@@ -109,7 +139,8 @@
                             <div class="exp-header">
                                 <div>
                                     <h3 class="exp-title">Coordinador de Firma Digital</h3>
-                                    <div class="exp-company">Secretaría de Innovación, Ciencia y Tecnología de la Nación</div>
+                                    <div class="exp-company">Secretaría de Innovación, Ciencia y Tecnología de la Nación
+                                    </div>
                                 </div>
                                 <div class="exp-meta">
                                     <div class="exp-year">2025 - PRESENTE</div>
@@ -118,12 +149,15 @@
                             </div>
                             <ul class="exp-description">
                                 <li>Liderazgo técnico y operativo de un equipo de +15 personas.</li>
-                                <li>Elaboración de reportes de gestión técnica y respuestas para auditorías internas y externas.</li>
-                                <li>Referente técnico principal para la operación, soporte avanzado N3 y continuidad del servicio de la infraestructura de clave pública.</li>
+                                <li>Elaboración de reportes de gestión técnica y respuestas para auditorías internas y
+                                    externas.</li>
+                                <li>Referente técnico principal para la operación, soporte avanzado N3 y continuidad del
+                                    servicio de la infraestructura de clave pública.</li>
                             </ul>
                             <div class="exp-highlight">
                                 <h4>Migración de HSM</h4>
-                                <p>Líder de proyecto. Encargado del seguimiento, coordinación del equipo técnico, realización de tareas claves del proceso.</p>
+                                <p>Líder de proyecto. Encargado del seguimiento, coordinación del equipo técnico,
+                                    realización de tareas claves del proceso.</p>
                             </div>
                         </div>
                         <!-- Role 2 -->
@@ -131,7 +165,8 @@
                             <div class="exp-header">
                                 <div>
                                     <h3 class="exp-title">Asesor & Administrador AC</h3>
-                                    <div class="exp-company">Secretaría de Innovación, Ciencia y Tecnología de la Nación</div>
+                                    <div class="exp-company">Secretaría de Innovación, Ciencia y Tecnología de la Nación
+                                    </div>
                                 </div>
                                 <div class="exp-meta">
                                     <div class="exp-year">2022 - 2025</div>
@@ -166,31 +201,39 @@
                         <!-- Project 1 -->
                         <div class="project-card">
                             <div class="project-image">
-                                <img alt="Generador de CUITS" src="https://lh3.googleusercontent.com/aida/ADBb0ug79aZGhgsS2yJQIUComl4MH63Yk7ycsieag4ZG3IwHIRt0IlFDJg8JKwPvla9CmMpS4vUqMhPLjsUjwi2EAldS7p9E3uTBw3hxWGoJbTuiNozlwmyEMK_Jh0pgvPKNy8jsiV8QguowoZGpRxK9viFkKRIKAMb8x7Ocrvfi1E52M81BdarguasTkInf8QqS4GzL_qATgDIFqWWbEjCYDwYn-eSRNUHrUo4baR0XmZhKST8qStlgJYP_G4s">
+                                <img alt="Generador de CUITS" src="resources/img/preview-CuitGenerator.png">
                             </div>
                             <div class="project-content">
                                 <h3 class="project-title">Generador de CUITS</h3>
-                                <p class="project-description">App web para creación de datos de prueba válidos sintácticamente, agilizando procesos operativos.</p>
+                                <p class="project-description">App web para creación de datos de prueba válidos
+                                    sintácticamente, agilizando procesos operativos.</p>
                                 <div class="project-tags">
-                                    <span class="tag">JS</span>
                                     <span class="tag">HTML/CSS</span>
+                                    <span class="tag">JS</span>
                                 </div>
-                                <a href="#" class="btn-outline">VER PROYECTO</a>
+                                <a href="https://github.com/FedericoIseas/CUITGenerator" class="btn-outline"
+                                    target="_blank">VER
+                                    PROYECTO</a>
                             </div>
                         </div>
                         <!-- Project 2 -->
                         <div class="project-card">
                             <div class="project-image">
-                                <img alt="Bot Facturador Telegram" src="https://lh3.googleusercontent.com/aida/ADBb0uhSBllgiS8Oj9l39kZuyzSscxrcuTjXcUh8BIlCnQLMX6JgtDpKtP11cAAcvY3pKsFK6_Lza3-ZaeYJOfKLfe-CUbsN1PKmuFWXJ5f7Fa41ehUKOZmtvnL85IC7P2x55UZiB4g-6v_fE4gnM2646oyGpU64qWlDDCN8HpJNmb-oYcEOimZdhTIVrzrgw0rOwl7IyShPsEOf9WSMVMV-O7Td6vbOEyrePCcq-ochqR-co9pqXNvK4oedj_o">
+                                <img alt="Bot Facturador Telegram"
+                                    src="https://lh3.googleusercontent.com/aida/ADBb0uhSBllgiS8Oj9l39kZuyzSscxrcuTjXcUh8BIlCnQLMX6JgtDpKtP11cAAcvY3pKsFK6_Lza3-ZaeYJOfKLfe-CUbsN1PKmuFWXJ5f7Fa41ehUKOZmtvnL85IC7P2x55UZiB4g-6v_fE4gnM2646oyGpU64qWlDDCN8HpJNmb-oYcEOimZdhTIVrzrgw0rOwl7IyShPsEOf9WSMVMV-O7Td6vbOEyrePCcq-ochqR-co9pqXNvK4oedj_o">
                             </div>
                             <div class="project-content">
                                 <h3 class="project-title">Bot Facturador</h3>
-                                <p class="project-description">Integración con AFIP para emisión de facturas electrónicas vía Telegram con gestión de clientes.</p>
+                                <p class="project-description">Integración con AFIP para emisión de facturas
+                                    electrónicas vía Telegram con gestión de clientes.</p>
                                 <div class="project-tags">
+                                    <span class="tag">HTML/CSS</span>
                                     <span class="tag">NODE.JS</span>
                                     <span class="tag">AFIP SDK</span>
                                 </div>
-                                <a href="#" class="btn-outline">VER PROYECTO</a>
+                                <a href="https://github.com/FedericoIseas/FacturadorFIDEV-Prod" class="btn-outline"
+                                    target="_blank">VER
+                                    PROYECTO</a>
                             </div>
                         </div>
                     </div>
@@ -269,13 +312,6 @@
                         </div>
                     </div>
                 </section>
-
-                <!-- CTA Sidebar -->
-                <div class="glass-panel cta-panel">
-                    <h3>¿Hablamos?</h3>
-                    <p>Estoy abierto a nuevas oportunidades y colaboraciones.</p>
-                    <a href="#contacto" class="btn-primary">ENVIAR MENSAJE</a>
-                </div>
             </aside>
         </div>
 
@@ -285,26 +321,32 @@
                 <div class="contact-grid">
                     <div class="contact-info">
                         <h2 class="contact-title">¡Hablemos!</h2>
-                        <p class="contact-description">Si estás interesado en mi perfil o tienes alguna pregunta, no dudes en contactarme.</p>
+                        <p class="contact-description">Si estás interesado en mi perfil o tienes alguna pregunta, no
+                            dudes en contactarme.</p>
                         <div class="contact-social">
                             <a href="https://www.linkedin.com/in/federico-iseas" target="_blank" aria-label="LinkedIn">
-                                <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                                </svg>
                             </a>
                             <a href="mailto:federicoiseas@gmail.com" aria-label="Email">
                                 <span class="material-symbols-outlined">mail</span>
                             </a>
                         </div>
                     </div>
-                    <form class="contact-form">
+                    <form class="contact-form" id="contact-form">
                         <div class="form-group">
                             <label for="email">Tu email:</label>
-                            <input type="email" id="email" placeholder="email@ejemplo.com">
+                            <input type="email" id="email" name="reply_to" placeholder="email@ejemplo.com" required>
                         </div>
                         <div class="form-group">
                             <label for="mensaje">Tu mensaje:</label>
-                            <textarea id="mensaje" placeholder="Escribe tu mensaje aquí..." rows="4"></textarea>
+                            <textarea id="mensaje" name="message" placeholder="Escribe tu mensaje aquí..." rows="4"
+                                required></textarea>
                         </div>
-                        <button type="submit" class="btn-primary">ENVIAR MENSAJE</button>
+                        <button type="submit" id="submit-btn" class="btn-primary">ENVIAR MENSAJE</button>
+                        <div id="form-status" class="form-status"></div>
                     </form>
                 </div>
             </div>
@@ -322,6 +364,66 @@
             </div>
         </div>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- Theme toggle ---
+            const themeToggle = document.getElementById('theme-toggle');
+            const htmlElement = document.documentElement;
+            const heroImage = document.querySelector('.hero-image-img');
+
+            function updateIconAndImage() {
+                if (htmlElement.classList.contains('dark')) {
+                    themeToggle.textContent = 'light_mode';
+                    if (heroImage) heroImage.src = 'resources/img/foto.jpg';
+                } else {
+                    themeToggle.textContent = 'dark_mode';
+                    if (heroImage) heroImage.src = 'resources/img/foto-light-mode.png';
+                }
+            }
+
+            updateIconAndImage();
+
+            themeToggle.addEventListener('click', () => {
+                htmlElement.classList.toggle('dark');
+                const isDark = htmlElement.classList.contains('dark');
+                localStorage.setItem('theme', isDark ? 'dark' : 'light');
+                updateIconAndImage();
+            });
+
+            // --- Formulario de contacto con EmailJS ---
+            const form = document.getElementById('contact-form');
+            const submitBtn = document.getElementById('submit-btn');
+            const formStatus = document.getElementById('form-status');
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                // Estado de carga
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'ENVIANDO...';
+                formStatus.className = 'form-status';
+                formStatus.textContent = '';
+
+                // ⚠️ Reemplazá 'TU_SERVICE_ID' y 'TU_TEMPLATE_ID' con los tuyos de EmailJS
+                emailjs.sendForm('service_f9ttpit', 'template_10xd4ya', form)
+                    .then(() => {
+                        formStatus.className = 'form-status form-status--success';
+                        formStatus.textContent = '✓ ¡Mensaje enviado! Te responderé a la brevedad.';
+                        form.reset();
+                    })
+                    .catch((error) => {
+                        console.error('EmailJS error:', error);
+                        formStatus.className = 'form-status form-status--error';
+                        formStatus.textContent = '✗ Hubo un error al enviar. Intentá de nuevo o escribime directamente.';
+                    })
+                    .finally(() => {
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = 'ENVIAR MENSAJE';
+                    });
+            });
+        });
+    </script>
 </body>
 
 </html>
