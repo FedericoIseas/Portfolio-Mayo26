@@ -335,10 +335,49 @@ a {
     cursor: pointer;
     font-size: 20px;
     transition: color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
 }
 
 .nav-icon:hover {
     color: var(--primary);
+}
+
+.nav-lang-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--on-surface-variant);
+    background-color: rgba(var(--primary-rgb), 0.05);
+    border: 1px solid var(--glass-border);
+    padding: 5px 10px;
+    border-radius: 9999px;
+    transition: all 0.25s ease;
+    cursor: pointer;
+    text-decoration: none;
+    line-height: 1;
+}
+
+.nav-lang-toggle:hover {
+    color: var(--primary);
+    border-color: rgba(var(--primary-rgb), 0.3);
+    background-color: rgba(var(--primary-rgb), 0.08);
+    transform: translateY(-1px);
+}
+
+.nav-lang-toggle .nav-icon {
+    font-size: 16px;
+}
+
+.lang-label {
+    font-family: inherit;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.05em;
+    transform: translateY(0.5px);
 }
 
 .nav-cv-btn {
