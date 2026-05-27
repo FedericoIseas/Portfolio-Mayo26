@@ -425,6 +425,11 @@
                         </div>
                     </div>
                     <form class="contact-form" id="contact-form">
+                        <!-- Honeypot Field to prevent spam -->
+                        <div class="form-group-hidden" aria-hidden="true">
+                            <label for="fax">Fax (Leave empty / Dejar vacío):</label>
+                            <input type="text" id="fax" name="fax" autocomplete="off" tabindex="-1">
+                        </div>
                         <div class="form-group">
                             <label for="email">Your email:</label>
                             <input type="email" id="email" name="reply_to" placeholder="email@example.com" required>
@@ -455,6 +460,8 @@
     </footer>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Anti-spam time-lock timestamp
+            const pageLoadTime = Date.now();
 
             // --- Theme toggle ---
             const themeToggle = document.getElementById('theme-toggle');
@@ -514,6 +521,30 @@
 
             form.addEventListener('submit', function (e) {
                 e.preventDefault();
+
+                // Anti-spam check 1: Honeypot field (must remain empty)
+                const honeypot = document.getElementById('fax').value;
+
+                // Anti-spam check 2: Time lock (must take at least 3 seconds)
+                const timeSpent = (Date.now() - pageLoadTime) / 1000;
+
+                if (honeypot || timeSpent < 3) {
+                    console.warn('Spam submission blocked silently.');
+                    // Simulate network latency and return fake success response to bot
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'SENDING...';
+                    formStatus.className = 'form-status';
+                    formStatus.textContent = '';
+
+                    setTimeout(() => {
+                        formStatus.className = 'form-status form-status--success';
+                        formStatus.textContent = '✓ Message sent! I will respond to you shortly.';
+                        form.reset();
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = 'SEND MESSAGE';
+                    }, 1000);
+                    return;
+                }
 
                 // Loading state
                 submitBtn.disabled = true;
