@@ -33,6 +33,9 @@
     <header class="header-fixed">
         <div class="nav-glass-panel">
             <div class="nav-content">
+                <button id="nav-toggle" class="nav-toggle-btn" aria-label="Menú">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
                 <nav class="nav-menu">
                     <a href="#inicio">Inicio</a>
                     <a href="#experiencia">Experiencia</a>
@@ -48,6 +51,21 @@
                     </a>
                 </div>
             </div>
+            <!-- Mobile Menu Drawer -->
+            <div class="nav-mobile-drawer" id="nav-mobile-drawer">
+                <nav class="nav-mobile-menu">
+                    <a href="#inicio">Inicio</a>
+                    <a href="#experiencia">Experiencia</a>
+                    <a href="#proyectos">Proyectos</a>
+                    <a href="#contacto">Contacto</a>
+                </nav>
+                <div class="nav-mobile-actions">
+                    <a href="resources/docs/CV_Iseas_Federico.pdf" class="nav-cv-btn-mobile" target="_blank">
+                        <span class="material-symbols-outlined">download</span>
+                        Descargar CV
+                    </a>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -58,13 +76,14 @@
                 <div class="hero-text">
                     <div>
                         <h1 class="hero-title">Federico Iseas</h1>
-                        <h2 class="hero-subtitle">Sysadmin PKI - Soporte técnico N3</h2>
+                        <h2 class="hero-subtitle">Especialista PKI | Desarrollador en formación</h2>
                     </div>
                     <p class="hero-description">
                         <strong>Estudiante Lic. en Informática</strong><br>
-                        Especialista en infraestructura PKI y soporte N3 con formación en la Licenciatura en
-                        Informática. Tras 4 años garantizando la operación y estabilidad de sistemas críticos, me
-                        encuentro orientando mi carrera hacia el desarrollo de software.
+                        Soy especialista en Firma Digital e infraestructura PKI con alma de desarrollador. Después de
+                        forjar mi camino desde cero hasta especializarme en infraestructuras de claves públicas, decidí
+                        volcar esa experiencia en crear cosas propias y explorar nuevos horizontes. Este portfolio es la
+                        síntesis de todo ese camino hasta ahora.
                     </p>
                     <div class="availability-section">
                         <h4 class="availability-title">Disponibilidad</h4>
@@ -489,6 +508,33 @@
                 const isDark = htmlElement.classList.contains('dark');
                 localStorage.setItem('theme', isDark ? 'dark' : 'light');
                 updateIconAndImage();
+            });
+
+            // --- Mobile Menu Toggle ---
+            const navToggle = document.getElementById('nav-toggle');
+            const mobileDrawer = document.getElementById('nav-mobile-drawer');
+            const navToggleIcon = navToggle.querySelector('.material-symbols-outlined');
+            const mobileMenuLinks = mobileDrawer.querySelectorAll('.nav-mobile-menu a');
+
+            function toggleMobileMenu() {
+                const isOpen = mobileDrawer.classList.toggle('active');
+                navToggle.classList.toggle('active');
+                if (isOpen) {
+                    navToggleIcon.textContent = 'close';
+                } else {
+                    navToggleIcon.textContent = 'menu';
+                }
+            }
+
+            navToggle.addEventListener('click', toggleMobileMenu);
+
+            // Close mobile menu when a link is clicked
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (mobileDrawer.classList.contains('active')) {
+                        toggleMobileMenu();
+                    }
+                });
             });
 
             // --- Formulario de contacto con EmailJS ---
