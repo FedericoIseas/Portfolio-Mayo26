@@ -21,7 +21,7 @@
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <!-- EmailJS SDK -->
+    <!-- EmailJS SDK para fomulario-->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>
         emailjs.init({ publicKey: '51V_iiVuxdtqg4bDy' });
@@ -33,11 +33,6 @@
     <header class="header-fixed">
         <div class="nav-glass-panel">
             <div class="nav-content">
-                <div class="nav-logo">
-                    <img alt="FI Logo"
-                        src="data:image/png;base64,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"
-                        class="nav-logo-img">
-                </div>
                 <nav class="nav-menu">
                     <a href="#inicio">Inicio</a>
                     <a href="#experiencia">Experiencia</a>
@@ -134,7 +129,7 @@
                         <span class="material-symbols-outlined">work</span> Experiencia Profesional
                     </h2>
                     <div class="experience-list">
-                        <!-- Role 1 -->
+                        <!-- Coordinador -->
                         <div class="experience-card">
                             <div class="exp-header">
                                 <div>
@@ -149,22 +144,36 @@
                             </div>
                             <ul class="exp-description">
                                 <li>Liderazgo técnico y operativo de un equipo de +15 personas.</li>
+                                <li>Referente técnico principal para la operación, soporte avanzado Nivel 3 y
+                                    continuidad del
+                                    servicio de la infraestructura de clave pública.</li>
+                                <li>Gestión y seguimiento de proyectos relacionados con la infraestructura de
+                                    certificación digital y las Autoridades Certificantes.</li>
                                 <li>Elaboración de reportes de gestión técnica y respuestas para auditorías internas y
                                     externas.</li>
-                                <li>Referente técnico principal para la operación, soporte avanzado N3 y continuidad del
-                                    servicio de la infraestructura de clave pública.</li>
                             </ul>
+                            <h5 class="exp-highlights-label">Proyecto destacado</h5>
                             <div class="exp-highlight">
                                 <h4>Migración de HSM</h4>
+                                <ul>
+                                    <li>Liderazgo técnico, seguimiento y coordinación operativa en la migración integral
+                                        de 4 equipos
+                                        HSM. </li>
+                                    <li>Ejecución de tareas críticas de configuración y despliegue en producción para la
+                                        AC ONTI, garantizando la
+                                        continuidad del servicio.</li>
+                                    <li>Documentación de todo el proceso para registro formal, auditoría y mantenimiento
+                                        futuro.</li>
+                                </ul>
                                 <p>Líder de proyecto. Encargado del seguimiento, coordinación del equipo técnico,
                                     realización de tareas claves del proceso.</p>
                             </div>
                         </div>
-                        <!-- Role 2 -->
+                        <!-- Asistente técnico y administrador de AC -->
                         <div class="experience-card">
                             <div class="exp-header">
                                 <div>
-                                    <h3 class="exp-title">Asesor & Administrador AC</h3>
+                                    <h3 class="exp-title">Soporte técnico y Administrador de AC</h3>
                                     <div class="exp-company">Secretaría de Innovación, Ciencia y Tecnología de la Nación
                                     </div>
                                 </div>
@@ -174,86 +183,78 @@
                                 </div>
                             </div>
                             <ul class="exp-description">
-                                <li>Mantenimiento de infraestructura en Windows Server y operación de HSM.</li>
-                                <li>Automatización de reportes mediante consultas complejas en SQL Server.</li>
-                                <li>Resolución de +1000 incidentes anuales (Soporte N3).</li>
+                                <li>Administración, soporte y mantenimiento de la AC ONTI.</li>
+                                <li>Mantenimiento de infraestructura en Windows Server y operación directa de Hardware
+                                    Security Modules (HSM)</li>
+                                <li>Diseño y ejecución de consultas complejas en SQL Server para la extracción de datos,
+                                    automatizando la
+                                    generación de reportes operativos.</li>
+                                <li>Soporte avanzado de Nivel 3 y resolución de +1000 incidentes anuales.</li>
+                                <li>Docente de capacitación en Firma Digital para Autoridades de Registro de todo el
+                                    país.</li>
+                                <li>Preparación de informes y respuestas técnicas para auditorías internas, externas y
+                                    regulatorias sobre la infraestructura de firma digital.</li>
                             </ul>
+                            <h5 class="exp-highlights-label">Proyectos destacados</h5>
                             <div class="exp-highlights-grid">
                                 <div class="exp-highlight">
                                     <h4>TSL argentina</h4>
-                                    <p>Definición y mantenimiento bajo estándares ETSI.</p>
+                                    <ul>
+                                        <li>Diseño, implementación y mantenimiento de la TSL de la República Argentina,
+                                            garantizando la interoperabilidad
+                                            técnica bajo el estándar ETSI TS 119 612.</li>
+                                        <li>Consultoría de referencia a otros países para la implementación de sus
+                                            respectivas listas de confianza.</li>
+                                    </ul>
                                 </div>
                                 <div class="exp-highlight">
                                     <h4>Validador de firmas</h4>
-                                    <p>Elaboración de requerimientos y pruebas funcionales.</p>
+                                    <ul>
+                                        <li>Definición de requerimientos técnicos y arquitectura base en conjunto con
+                                            proveedores externos.</li>
+                                        <li>Diseño y ejecución de pruebas funcionales previas al pase a producción
+                                            del servicio
+                                            (validadordefirmas.gob.ar), utilizado por +2 millones de personas en 2025.
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </section>
-
-                <!-- Proyectos Section -->
-                <section class="section-projects" id="proyectos">
-                    <h2 class="section-title">
-                        <span class="material-symbols-outlined">rocket_launch</span> Proyectos personales
-                    </h2>
-                    <div class="projects-grid">
-                        <!-- Project 1 -->
-                        <div class="project-card">
-                            <div class="project-image">
-                                <img alt="Generador de CUITS" src="resources/img/preview-CuitGenerator.png">
-                            </div>
-                            <div class="project-content">
-                                <h3 class="project-title">Generador de CUITS</h3>
-                                <p class="project-description">App web para creación de datos de prueba válidos
-                                    sintácticamente, agilizando procesos operativos.</p>
-                                <div class="project-tags">
-                                    <span class="tag">HTML/CSS</span>
-                                    <span class="tag">JS</span>
+                        <!-- Oficial de Registro -->
+                        <div class="experience-card">
+                            <div class="exp-header">
+                                <div>
+                                    <h3 class="exp-title">Oficial de registro y Asistente técnico</h3>
+                                    <div class="exp-company">Secretaría de Innovación, Ciencia y Tecnología de la Nación
+                                    </div>
                                 </div>
-                                <a href="https://github.com/FedericoIseas/CUITGenerator" class="btn-outline"
-                                    target="_blank">VER
-                                    PROYECTO</a>
+                                <div class="exp-meta">
+                                    <div class="exp-year">2021 - 2022</div>
+                                    <div class="exp-location">CABA, ARGENTINA</div>
+                                </div>
                             </div>
+                            <ul class="exp-description">
+                                <li>Gestión de solicitudes de certificados digitales.</li>
+                                <li>Asistencia técnica y procedimental a suscriptores y Autoridades de Registro.</li>
+                                <li>Soporte técnico Nivel 1 y resolución de +200 incidentes anuales.</li>
+                            </ul>
                         </div>
-                        <!-- Project 2 -->
-                        <div class="project-card">
-                            <div class="project-image">
-                                <img alt="Bot Facturador Telegram"
-                                    src="https://lh3.googleusercontent.com/aida/ADBb0uhSBllgiS8Oj9l39kZuyzSscxrcuTjXcUh8BIlCnQLMX6JgtDpKtP11cAAcvY3pKsFK6_Lza3-ZaeYJOfKLfe-CUbsN1PKmuFWXJ5f7Fa41ehUKOZmtvnL85IC7P2x55UZiB4g-6v_fE4gnM2646oyGpU64qWlDDCN8HpJNmb-oYcEOimZdhTIVrzrgw0rOwl7IyShPsEOf9WSMVMV-O7Td6vbOEyrePCcq-ochqR-co9pqXNvK4oedj_o">
-                            </div>
-                            <div class="project-content">
-                                <h3 class="project-title">Bot Facturador</h3>
-                                <p class="project-description">Integración con AFIP para emisión de facturas
-                                    electrónicas vía Telegram con gestión de clientes.</p>
-                                <div class="project-tags">
-                                    <span class="tag">HTML/CSS</span>
-                                    <span class="tag">NODE.JS</span>
-                                    <span class="tag">AFIP SDK</span>
+                        <!-- Exp varias anteriores -->
+                        <div class="experience-card">
+                            <div class="exp-header">
+                                <div>
+                                    <h3 class="exp-title">Atención al público</h3>
+                                    <div class="exp-company">Varias empresas</div>
                                 </div>
-                                <a href="https://github.com/FedericoIseas/FacturadorFIDEV-Prod" class="btn-outline"
-                                    target="_blank">VER
-                                    PROYECTO</a>
-                            </div>
-                        </div>
-                        <!-- Project 3-->
-                        <div class="project-card">
-                            <div class="project-image">
-                                <img alt="Gestor de equipo"
-                                    src="https://lh3.googleusercontent.com/aida/ADBb0uhSBllgiS8Oj9l39kZuyzSscxrcuTjXcUh8BIlCnQLMX6JgtDpKtP11cAAcvY3pKsFK6_Lza3-ZaeYJOfKLfe-CUbsN1PKmuFWXJ5f7Fa41ehUKOZmtvnL85IC7P2x55UZiB4g-6v_fE4gnM2646oyGpU64qWlDDCN8HpJNmb-oYcEOimZdhTIVrzrgw0rOwl7IyShPsEOf9WSMVMV-O7Td6vbOEyrePCcq-ochqR-co9pqXNvK4oedj_o">
-                            </div>
-                            <div class="project-content">
-                                <h3 class="project-title">Gestor de equipos</h3>
-                                <p class="project-description">Integración con AFIP para emisión de facturas
-                                    electrónicas vía Telegram con gestión de clientes.</p>
-                                <div class="project-tags">
-                                    <span class="tag">HTML/CSS</span>
-                                    <span class="tag">NODE.JS</span>
+                                <div class="exp-meta">
+                                    <div class="exp-year">2016 - 2021</div>
+                                    <div class="exp-location">CHASCOMÚS/LA PLATA, ARGENTINA</div>
                                 </div>
-                                <a href="https://github.com/FedericoIseas/GestionAPP-DEMO" class="btn-outline"
-                                    target="_blank">VER
-                                    PROYECTO</a>
                             </div>
+                            <ul class="exp-description">
+                                <li>Atención al cliente, gestión de pedidos y manejo de caja, fortaleciendo habilidades
+                                    de comunicación, organización y trabajo en equipo.</li>
+                            </ul>
                         </div>
                     </div>
                 </section>
@@ -268,21 +269,21 @@
                     </h2>
                     <div class="skills-container">
                         <div class="skill-group">
-                            <h3 class="skill-category">Infraestructura</h3>
+                            <h3 class="skill-category">Infraestructura/Herramientas</h3>
                             <div class="skill-tags">
                                 <span class="skill-tag">HSM</span>
-                                <span class="skill-tag">Win Server</span>
+                                <span class="skill-tag">Windows Server</span>
                                 <span class="skill-tag">SQL Server</span>
-                                <span class="skill-tag">ETSI</span>
+                                <span class="skill-tag">JIRA Service Desk</span>
                             </div>
                         </div>
                         <div class="skill-group">
                             <h3 class="skill-category">Desarrollo</h3>
                             <div class="skill-tags">
-                                <span class="skill-tag">JS / Node</span>
+                                <span class="skill-tag">JavaScript</span>
+                                <span class="skill-tag">Node.js</span>
                                 <span class="skill-tag">HTML/CSS</span>
-                                <span class="skill-tag">Git</span>
-                                <span class="skill-tag">MongoDB</span>
+                                <span class="skill-tag">Git/GitHub</span>
                             </div>
                         </div>
                     </div>
@@ -296,19 +297,30 @@
                     <div class="glass-panel education-panel">
                         <div class="education-item">
                             <div class="education-status">EN CURSO</div>
-                            <div class="education-degree">Lic. en Informática</div>
-                            <div class="education-school">UNLP</div>
+                            <div class="education-degree">Licenciatura en Informática</div>
+                            <div class="education-school">Universidad Siglo 21</div>
                         </div>
                         <div class="education-certs">
                             <h3>CERTIFICACIONES</h3>
                             <div class="cert-list">
                                 <div class="cert-item">
                                     <span class="material-symbols-outlined">verified</span>
-                                    <span>Certificación Técnica PKI / HSM</span>
+                                    <div class="cert-info">
+                                        <span class="cert-name">Luna Network HSM 7 Certification Course (2025)</span>
+                                        <span class="cert-issuer">Complus SA (Partner oficial Thales)</span>
+                                    </div>
                                 </div>
                                 <div class="cert-item">
                                     <span class="material-symbols-outlined">verified</span>
-                                    <span>Fullstack Node.js</span>
+                                    <div class="cert-info">
+                                        <span class="cert-name">Inteligencia Artificial: herramientas para potenciar
+                                            nuestro trabajo (2025)</span>
+                                        <span class="cert-issuer">Aioxnis</span>
+                                    </div>
+                                    <a href="resources/docs/certificaciones/IA-herramientas-para-potenciar-nuestro-trabajo(2025).pdf"
+                                        target="_blank" class="cert-link" aria-label="Ver certificado">
+                                        <span class="material-symbols-outlined">open_in_new</span>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -325,23 +337,94 @@
                             <span class="language-name">ESPAÑOL</span>
                             <span class="language-level">NATIVO</span>
                         </div>
-                        <div class="language-card">
+                        <div class="language-card language-card--expanded">
                             <span class="language-name">INGLÉS</span>
-                            <span class="language-level">B2 / TÉCNICO</span>
+                            <div class="language-levels">
+                                <div class="language-sublevel">
+                                    <span class="language-skill-label">Lectura y comprensión</span>
+                                    <span class="language-level">Técnico avanzado</span>
+                                </div>
+                                <div class="language-sublevel">
+                                    <span class="language-skill-label">Habla</span>
+                                    <span class="language-level">Básico</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
             </aside>
         </div>
 
-        <!-- Contacto Section -->
+        <!-- Proyectos Section -->
+        <section class="section-projects" id="proyectos">
+            <h2 class="section-title">
+                <span class="material-symbols-outlined">rocket_launch</span> Proyectos personales
+            </h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img alt="Generador de CUITS" src="resources/img/preview-CuitGenerator.png">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Generador de CUITS</h3>
+                        <p class="project-description">App web para creación de datos de prueba válidos
+                            sintácticamente, agilizando procesos operativos.</p>
+                        <div class="project-tags">
+                            <span class="tag">HTML/CSS</span>
+                            <span class="tag">JS</span>
+                        </div>
+                        <a href="https://github.com/FedericoIseas/CUITGenerator" class="btn-outline" target="_blank">VER
+                            PROYECTO</a>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img alt="Bot Facturador Telegram" src="resources/img/preview-BotFacturador.png">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Bot Facturador</h3>
+                        <p class="project-description">Integración con AFIP para emisión de facturas
+                            electrónicas vía Telegram con gestión de clientes.</p>
+                        <div class="project-tags">
+                            <span class="tag">HTML/CSS</span>
+                            <span class="tag">NODE.JS</span>
+                            <span class="tag">AFIP SDK</span>
+                        </div>
+                        <a href="https://github.com/FedericoIseas/FacturadorFIDEV-Prod" class="btn-outline"
+                            target="_blank">VER PROYECTO</a>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img alt="Gestor de equipo" src="resources/img/preview-gestionApp.png">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Gestor de equipos</h3>
+                        <p class="project-description">Gestor de equipo para organización interna del personal
+                            disponible, presencia en oficina, licencias y equipamiento.</p>
+                        <div class="project-tags">
+                            <span class="tag">HTML/CSS</span>
+                            <span class="tag">NODE.JS</span>
+                            <span class="tag">SUPABASE</span>
+                        </div>
+                        <a href="https://github.com/FedericoIseas/GestionAPP-DEMO" class="btn-outline"
+                            target="_blank">VER PROYECTO</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
         <section class="section-contact" id="contacto">
             <div class="glass-panel contact-panel">
                 <div class="contact-grid">
                     <div class="contact-info">
                         <h2 class="contact-title">¡Hablemos!</h2>
-                        <p class="contact-description">Si estás interesado en mi perfil o tienes alguna pregunta, no
-                            dudes en contactarme.</p>
+                        <p class="contact-description">Si estás interesado en mi perfil o tienes un proyecto para
+                            proponerme, no dudes en contactarme.</p>
                         <div class="contact-social">
                             <a href="https://www.linkedin.com/in/federico-iseas" target="_blank" aria-label="LinkedIn">
                                 <svg viewBox="0 0 24 24">

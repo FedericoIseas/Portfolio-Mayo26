@@ -287,18 +287,6 @@ a {
     gap: 32px;
 }
 
-.nav-logo {
-    display: flex;
-    align-items: center;
-}
-
-.nav-logo-img {
-    width: 40px;
-    height: 40px;
-    border-radius: 17px;
-    object-fit: contain;
-}
-
 .nav-menu {
     display: flex;
     gap: 32px;
@@ -689,10 +677,10 @@ a {
 
 .section-title-sm {
     font-size: 24px;
-    line-height: 32px;
+    line-height: 40px;
     font-weight: 600;
     color: var(--on-surface);
-    margin-bottom: 24px;
+    margin-bottom: 32px;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     display: flex;
@@ -791,6 +779,19 @@ a {
     margin-bottom: 8px;
 }
 
+.exp-highlights-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--primary);
+    opacity: 0.75;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--glass-border);
+}
+
 .exp-highlight {
     background-color: var(--input-bg);
     border-left: 4px solid var(--primary);
@@ -811,6 +812,19 @@ a {
     color: var(--on-surface-variant);
 }
 
+.exp-highlight ul {
+    list-style-position: outside;
+    margin-left: 16px;
+    padding: 0;
+}
+
+.exp-highlight ul li {
+    font-size: 12px;
+    color: var(--on-surface-variant);
+    margin-bottom: 4px;
+    line-height: 1.5;
+}
+
 .exp-highlights-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -824,12 +838,25 @@ a {
 .section-projects {
     display: flex;
     flex-direction: column;
+    padding: 48px 0 0;
 }
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 24px;
+}
+
+@media (max-width: 1024px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .project-card {
@@ -1063,6 +1090,47 @@ a {
     flex-shrink: 0;
 }
 
+.cert-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.cert-name {
+    font-size: 12px;
+    color: var(--on-surface-variant);
+    font-weight: 700;
+}
+
+.cert-issuer {
+    font-size: 11px;
+    color: var(--primary);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    opacity: 0.8;
+}
+
+.cert-link {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    color: var(--on-surface-variant);
+    opacity: 0.4;
+    transition: color 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+    flex-shrink: 0;
+}
+
+.cert-link:hover {
+    color: var(--primary);
+    opacity: 1;
+    transform: scale(1.15);
+}
+
+.cert-link .material-symbols-outlined {
+    font-size: 16px;
+}
+
 /* ================================
    LANGUAGES SECTION
    ================================ */
@@ -1097,6 +1165,37 @@ a {
     letter-spacing: 0.05em;
     color: var(--primary);
     text-transform: uppercase;
+}
+
+.language-card--expanded {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.language-levels {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.language-sublevel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 0;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.language-sublevel:last-child {
+    border-bottom: none;
+}
+
+.language-skill-label {
+    font-size: 11px;
+    color: var(--on-surface-variant);
+    opacity: 0.75;
 }
 
 /* ================================
