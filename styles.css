@@ -497,7 +497,7 @@ a {
         transform: translateY(-1px);
         color: var(--btn-cta-color);
     }
-    
+
     .nav-cv-btn-mobile .material-symbols-outlined {
         font-size: 18px;
     }
@@ -783,7 +783,7 @@ html.dark .mode-presential {
         font-size: 38px;
         line-height: 46px;
     }
-    
+
     .hero-section {
         min-height: auto;
         margin-bottom: 48px;
@@ -810,6 +810,7 @@ html.dark .mode-presential {
         max-width: 100%;
         font-size: 16px;
         line-height: 24px;
+        text-align: justify;
     }
 
     .hero-image-img {
@@ -1728,6 +1729,7 @@ html.dark .mode-presential {
 }
 
 @media (max-width: 640px) {
+
     /* Ajuste en tarjetas de Experiencia Profesional */
     .exp-header {
         flex-direction: column;
